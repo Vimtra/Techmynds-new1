@@ -1,0 +1,861 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechMynds Inc - Premier IT Staffing & Recruitment Solutions</title>
+  <meta name="description"
+    content="TechMynds Inc provides premier IT staffing, tech recruitment, and professional training services across the USA. Find your dream job or hire top talent today.">
+  <meta name="keywords" content="IT staffing, tech recruitment, professional training, USA staffing, technology jobs">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TechMynds Inc - Premier IT Staffing & Recruitment Solutions">
+  <meta property="og:description"
+    content="Leading IT staffing and recruitment company providing top talent solutions across the USA">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-color: #e71e1e;
+      --secondary-color: #b10000;
+      --text-dark: #1f2937;
+      --white: #ffffff;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+    }
+
+    body {
+      font-family: "Nunito", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--white);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    .header {
+      background: var(--white);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      height: 60px;
+      width: auto;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-color);
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url("/Images/index-hero.jpg") no-repeat center center/cover;
+      color: var(--white);
+      padding: 150px 0 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      opacity: 0.3;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding-top: 100px;
+    }
+
+    .hero h1 {
+      font-family: "Bungee", sans-serif;
+      font-weight: 400;
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(45deg, var(--white), #e0e7ff);
+      background-clip: text;
+      animation: fadeInDown 1.5s ease-out, glow 2s infinite alternate;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 1.5s ease-out;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 2s ease-out;
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--primary-color);
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--white);
+      color: var(--primary-color);
+    }
+
+    /* About */
+    .about {
+      padding: 100px 0;
+      background: var(--gray-50);
+      text-align: center;
+    }
+
+    .about-heading h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .about-heading p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 3rem;
+      align-items: center;
+      margin: 3rem 0;
+      text-align: left;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .about-image img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .about-content p {
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .about-footer {
+      margin-top: 2rem;
+    }
+
+    .about-footer p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #333;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Animations */
+    .fade-in-left {
+      opacity: 0;
+      transform: translate3d(-60px, 0, 0);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+      will-change: opacity, transform;
+    }
+
+    .fade-in-left.visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .fade-in-right {
+      opacity: 0;
+      transform: translate3d(60px, 0, 0);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+      will-change: opacity, transform;
+    }
+
+    .fade-in-right.visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    /* Services */
+    .services {
+      padding: 100px 0;
+      background: var(--gray-50);
+    }
+
+    .services-heading {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .services-heading h2 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .services-heading p {
+      font-size: 1.2rem;
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .vision-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .vision-image img {
+      width: 100%;
+      border-radius: 15px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .vision-image img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .vision-text h3 {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .vision-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .vision-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .vision-text {
+        margin-top: 2rem;
+      }
+    }
+
+    /* Bridging */
+    .bridging-gap {
+      padding: 100px 0;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bridging-gap::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("https://placehold.co/1200x800/e0e7ff/ffffff?text=Tech+Background") no-repeat center center/cover;
+      opacity: 0.1;
+      z-index: 0;
+    }
+
+    .bridging-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .bridging-heading h2 {
+      font-size: 2.8rem;
+      color: var(--primary-color);
+      margin-bottom: 3rem;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .bridging-cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .bridging-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .bridging-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .bridging-card-icon {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    
+    .bridging-card h3 {
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+    }
+    
+    .bridging-card p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+     /* Footer */
+    .footer {
+      background: var(--gray-900);
+      color: var(--white);
+      padding: 50px 0 30px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-logo {
+      width: 150px;
+      margin-bottom: 15px;
+    }
+    
+    .footer-section h3 {
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+    
+    .footer-section a {
+      color: var(--white);
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+    
+    .footer-section a:hover {
+      opacity: 1;
+    }
+    
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid var(--gray-800);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .footer-social h3 {
+      font-size: 1rem;
+      color: var(--white);
+      margin: 0;
+      opacity: 0.8;
+      
+    }
+    
+    .social-icons a {
+      font-size: 1.5rem;
+      gap: 2rem;
+      color: var(--white);
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+
+   
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+    
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .services-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-social {
+        margin-top: 1rem;
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+    
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1100;
+    }
+    
+    .hamburger span {
+      display: block;
+      width: 28px;
+      height: 4px;
+      margin: 4px 0;
+      background: var(--primary-color);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    
+    /* Show hamburger on mobile, hide nav-menu by default */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+        justify-content: end;
+      }
+    
+      .nav-menu {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: var(--white);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        border-radius: 12px;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 2rem;
+        display: none;
+        min-width: 180px;
+        z-index: 1100;
+      }
+    
+      .cta-button {
+        display: none;
+      }
+    
+      .nav-menu.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="container">
+      <div class="nav">
+        <img src="Images/Techmynds-logo.png" class="logo">
+        <button class="hamburger" aria-label="Open menu" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="usstaffing.html" class="nav-link">US Staffing</a></li>
+          <li><a href="career.html" class="nav-link">Careers</a></li>
+        </ul>
+        <a href="contact.html" class="cta-button">Get Started</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content fade-in-up">
+        <h1>Shaping the Future of IT Staffing</h1>
+        <p>Connecting top talent with leading companies across the USA. We specialize in IT staffing, tech recruitment,
+          and professional training to drive your success forward.</p>
+        <div class="hero-buttons">
+          <a href="#services" class="btn-primary">Our Services</a>
+          <a href="#contact" class="btn-secondary">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-heading">
+        <h2>WELCOME TO TECH MYNDS INC!</h2>
+        <p>At Tech Mynds Inc, we are more than just a US staffing company—<br>we are career architects.</p>
+      </div>
+
+      <div class="about-grid fade-in-left">
+        <div class="about-image">
+          <img src="/Images/about-img.jpg" alt="About Tech Mynds Inc">
+        </div>
+        <div class="about-content">
+          <p>Whether you’re a professional seeking your next big opportunity or a company in search of top-tier talent,
+            Tech Mynds Inc is here to make the perfect connection.</p>
+          <p>With years of expertise in staffing, recruitment, and workforce management, we provide the right talent at
+            the right time.</p>
+          <p>We pride ourselves on building relationships that last, helping businesses grow while guiding professionals
+            toward fulfilling career paths.</p>
+        </div>
+      </div>
+
+      <div class="about-footer">
+        <p>If you're looking to advance your career or build a high-performing team, Tech Mynds Inc is the place to be.
+          Together, we shape the future of work!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="services-heading">
+        <h2>EXPERT PROFESSIONALS AND DRIVING BUSINESS SUCESS</h2>
+        <p>Proven professionals that solve your business problems.</p>
+      </div>
+      <div class="vision-grid about-grid fade-in-left">
+        <div class="vision-image">
+          <img src="/Images/services-img.jpg" alt="Our Vision">
+        </div>
+        <div class="vision-text">
+          <h3>Our Vision</h3>
+          <p>Whether you're in a permanent role or temporary position, we're dedicated to helping you grow your career.
+          </p>
+          <p>We connect you with roles that match your skills and ambitions.</p>
+          <p>No matter your career stage, we guide and support you every step of the way.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Bridging the Gap Section -->
+  <section id="bridging-gap" class="bridging-gap">
+    <div class="container bridging-container">
+      <!-- Section Heading -->
+      <div class="bridging-heading">
+        <h2>BRIDGING THE GAP BETWEEN YOU AND YOUR NEXT WORKFORCE </h2>
+      </div>
+
+      <!-- Section Content -->
+      <div class="bridging-cards-container">
+        <!-- Card 1 -->
+        <div class="bridging-card fade-in-up" style="animation-delay: 0.1s;">
+          <i class="bi bi-people-fill bridging-card-icon"></i>
+          <h3>Finding Skilled Professionals</h3>
+          <p>Finding and hiring skilled professionals, especially in specialized fields like technology, can be a complex challenge. Our expertise helps businesses navigate these hurdles.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="bridging-card fade-in-up" style="animation-delay: 0.3s;">
+          <i class="bi bi-person-check-fill bridging-card-icon"></i>
+          <h3>Securing the Right Talent</h3>
+          <p>The success of your business relies on hiring the right talent—experienced professionals who align with your objectives and drive growth. We help identify and secure the best candidates.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="bridging-card fade-in-up" style="animation-delay: 0.5s;">
+          <i class="bi bi-arrow-right-circle-fill bridging-card-icon"></i>
+          <h3>Staying Ahead of the Market</h3>
+          <p>As a leading technology staffing company, we provide tailored staffing solutions to connect you with top-tier professionals, ensuring your business stays ahead in a competitive market.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+
+        <div class="footer-section footer-brand">
+          <img src="Images/Techmynds-logo.png" alt="TechMynds Logo" class="footer-logo">
+          <p>Premier IT staffing and recruitment solutions connecting talent with opportunity across the USA.</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Services</h3>
+          <p><a href="#services">US Staffing</a></p>
+          <p><a href="#services">Tech Recruitment</a></p>
+          <p><a href="#services">Professional Training</a></p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="about.html">About Us</a></p>
+          <p><a href="usstaffing.html">Services</a></p>
+          <p><a href="contact.html">Contact</a></p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p><a href="mailto:hr@techmyndsinc.com"><i class="bi bi-envelope-fill me-2"></i>hr@techmyndsinc.com</a></p>
+          <p><a href="tel:+1 732-587-6750"><i class="bi bi-telephone-fill me-2"></i>+1 732-587-6750</a></p>
+        </div>
+        
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 TechMynds Inc. All rights reserved.</p>
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/company/techmyndsinc/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script>
+    // Simple smooth scrolling (keep your existing block)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // Header blur on scroll (keep your existing block)
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 100) {
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.backdropFilter = 'blur(10px)';
+      } else {
+        header.style.background = 'var(--white)';
+        header.style.backdropFilter = 'none';
+      }
+    });
+
+    // ✅ Reveal-on-scroll using IntersectionObserver (more reliable)
+    document.addEventListener('DOMContentLoaded', () => {
+      const revealTargets = document.querySelectorAll('.fade-in-left, .fade-in-right, .bridging-card');
+
+      // Fallback if nothing to observe
+      if (!revealTargets.length) return;
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target); // animate once
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '0px 0px -10% 0px', // start a bit before fully in view
+        threshold: 0.15
+      });
+
+      revealTargets.forEach(el => observer.observe(el));
+    });
+
+
+
+
+    // Hamburger menu toggle
+    function toggleMenu() {
+      document.querySelector('.nav-menu').classList.toggle('show');
+    }
+
+    // Optional: Close menu when clicking outside or on a link
+    document.addEventListener('click', function (e) {
+      const navMenu = document.querySelector('.nav-menu');
+      const hamburger = document.querySelector('.hamburger');
+      if (navMenu.classList.contains('show') &&
+        !navMenu.contains(e.target) &&
+        !hamburger.contains(e.target)) {
+        navMenu.classList.remove('show');
+      }
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-menu').classList.remove('show');
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>

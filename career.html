@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers – TechMynds Inc</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-color: #e71e1e;
+      --secondary-color: #b10000;
+      --white: #ffffff;
+      --gray-50: #f9fafb;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+      --text-dark: #222;
+    }
+
+    body {
+      font-family: "Nunito", sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--white);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Header */
+    .header {
+      background: var(--white);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      height: 60px;
+      width: auto;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary-color);
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    /* Hero Section */
+    .hero {
+     background: url("/Images/career-hero.jpg") no-repeat center center/cover;
+      height: 350px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      margin-top: 80px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      color: var(--white);
+  max-width: 800px;
+    }
+
+    .hero h1 {
+  font-family: "Bungee", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero h1 span {
+  color: var(--primary-color);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+    /* Sections */
+    .section {
+      padding: 60px 20px;
+    }
+
+    .section h2 {
+      font-size: 2.2rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .section p {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      text-align: center;
+    }
+
+    .gray-bg {
+      background: var(--gray-50);
+    }
+
+    /* Job Cards */
+    .job-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .job-card {
+      background: var(--gray-50);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    /* ...existing code... */
+.job-card h3,
+.job-card .apply-btn {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* ...existing code... */
+
+    .job-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .job-card h3 {
+      margin-bottom: 10px;
+      color: var(--secondary-color);
+    }
+
+    .apply-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .apply-btn:hover {
+      background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+      transform: translateY(-2px);
+    }
+
+    /* Popup form background */
+.popup-form {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center; 
+  align-items: center;
+}
+
+/* Form box */
+.form-content {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 12px;
+  width: 420px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+  border-top: 6px solid var(--primary-color);
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--secondary-color);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Form styling */
+.form-content h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.form-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-content label {
+  margin-top: 10px;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.form-content input {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border 0.3s;
+}
+
+.form-content input:focus {
+  outline: none;
+  border: 1px solid var(--primary-color);
+}
+
+/* Submit button */
+.form-content button {
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-content button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+  /* Footer */
+    .footer {
+      background: var(--gray-900);
+      color: var(--white);
+      padding: 50px 0 30px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-logo {
+      width: 150px;
+      margin-bottom: 15px;
+    }
+    
+    .footer-section h3 {
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+    
+    .footer-section a {
+      color: var(--white);
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+    
+    .footer-section a:hover {
+      opacity: 1;
+    }
+    
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid var(--gray-800);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .footer-social h3 {
+      font-size: 1rem;
+      color: var(--white);
+      margin: 0;
+      opacity: 0.8;
+      
+    }
+    
+    .social-icons a {
+      font-size: 1.5rem;
+      gap: 2rem;
+      color: var(--white);
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 4px;
+  margin: 4px 0;
+  background: var(--primary-color);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Show hamburger on mobile, hide nav-menu by default */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    justify-content: end;
+  }
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: var(--white);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-radius: 12px;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    display: none;
+    min-width: 180px;
+    z-index: 1100;
+  }
+  .cta-button  {
+    display: none;
+  }
+  .nav-menu.show {
+    display: flex;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+    <nav class="container">
+      <div class="nav">
+        <img src="Images/Techmynds-logo.png" class="logo">
+        <button class="hamburger" aria-label="Open menu" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="usstaffing.html" class="nav-link">US Staffing</a></li>
+          <li><a href="career.html" class="nav-link active">Careers</a></li>
+        </ul>
+        <a href="contact.html" class="cta-button">Get Started</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Careers</h1>
+      <p>Be part of a team that’s shaping the future of IT staffing & solutions.</p>
+    </div>
+  </section>
+
+  <!-- ...existing code... -->
+<section class="section gray-bg">
+  <div class="container">
+    <h2>JOIN THE TEAM</h2>
+    <p>
+      At <strong>TechMynds Inc</strong>, we value innovation, collaboration, and growth.
+      Our team is passionate about connecting the right talent with the right opportunities.
+      When you join us, you’re not just getting a job — you’re building a career.
+    </p>
+    <p>
+      We foster a culture where creativity thrives, and every voice matters. Whether you’re an experienced professional
+      or a recent graduate, TechMynds offers opportunities to grow, learn, and make an impact.
+    </p>
+
+    <!-- Employee Referral Program Card -->
+    <div class="job-grid">
+      <div class="job-card">
+        <h3>Employee Referral Program</h3>
+        <p> Help us find great talent and get rewarded!</p>
+        <p>
+          Know someone who would be a great fit for TechMynds Inc? Refer them to us! If your referral is hired, you’ll receive a special reward as a token of our appreciation.
+        </p>
+        <button class="apply-btn" onclick="openForm('Employee Referral Program')">Refer Now</button>
+      </div>
+    </div>
+    <!-- End Employee Referral Program Card -->
+
+  </div>
+</section>
+<!-- ...existing code... -->
+
+  <!-- Job Openings -->
+  <section class="section">
+    <div class="container">
+      <h2>Current Job Openings</h2>
+      <div class="job-grid">
+
+        <div class="job-card">
+          <h3>Software Developer</h3>
+          <p><strong>Skills:</strong> SD, C#, .NET</p>
+          <p>We are looking for developers with expertise in Microsoft technologies to design, develop, and maintain
+            enterprise-grade applications.</p>
+          <button class="apply-btn" onclick="openForm('Software Developer')">Apply Now</button>
+        </div>
+
+        <div class="job-card">
+          <h3>AWS DevOps Engineer</h3>
+          <p><strong>Skills:</strong> AWS, CI/CD, Cloud Infrastructure</p>
+          <p>Join our DevOps team to build scalable cloud infrastructure, automate deployments, and improve system
+            reliability.</p>
+          <button class="apply-btn" onclick="openForm('AWS DevOps Engineer')">Apply Now</button>
+        </div>
+
+        <div class="job-card">
+          <h3>Frontend Developer</h3>
+          <p><strong>Skills:</strong> HTML, CSS, JavaScript, React</p>
+          <p>We are looking for a skilled Frontend Developer to build user-friendly, innovative web applications.</p>
+          <button class="apply-btn" onclick="openForm('Frontend Developer')">Apply Now</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Popup Form -->
+  <div id="applicationForm" class="popup-form">
+    <div class="form-content">
+      <span class="close-btn" onclick="closeForm()">&times;</span>
+      <h2>Job Application</h2>
+      <form>
+        <label for="jobRole">Applying For</label>
+        <input type="text" id="jobRole" name="jobRole" readonly>
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="experience">Experience (in years)</label>
+        <input type="number" id="experience" name="experience" required>
+
+        <label for="resume">Upload Resume</label>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+
+        <button type="submit">Submit Application</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+
+        <div class="footer-section footer-brand">
+          <img src="Images/Techmynds-logo.png" alt="TechMynds Logo" class="footer-logo">
+          <p>Premier IT staffing and recruitment solutions connecting talent with opportunity across the USA.</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Services</h3>
+          <p><a href="#services">US Staffing</a></p>
+          <p><a href="#services">Tech Recruitment</a></p>
+          <p><a href="#services">Professional Training</a></p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="about.html">About Us</a></p>
+          <p><a href="usstaffing.html">Services</a></p>
+          <p><a href="contact.html">Contact</a></p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p><a href="mailto:hr@techmyndsinc.com"><i class="bi bi-envelope-fill me-2"></i>hr@techmyndsinc.com</a></p>
+          <p><a href="tel:+1 732-587-6750"><i class="bi bi-telephone-fill me-2"></i>+1 732-587-6750</a></p>
+        </div>
+        
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 TechMynds Inc. All rights reserved.</p>
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/company/techmyndsinc/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script>
+    function openForm(jobTitle) {
+      document.getElementById("applicationForm").style.display = "flex";
+      document.getElementById("jobRole").value = jobTitle;
+    }
+
+    function closeForm() {
+      document.getElementById("applicationForm").style.display = "none";
+    }
+    // Hamburger menu toggle
+  function toggleMenu() {
+    document.querySelector('.nav-menu').classList.toggle('show');
+  }
+
+  // Optional: Close menu when clicking outside or on a link
+  document.addEventListener('click', function(e) {
+    const navMenu = document.querySelector('.nav-menu');
+    const hamburger = document.querySelector('.hamburger');
+    if (navMenu.classList.contains('show') &&
+        !navMenu.contains(e.target) &&
+        !hamburger.contains(e.target)) {
+      navMenu.classList.remove('show');
+    }
+  });
+
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-menu').classList.remove('show');
+    });
+  });
+  </script>
+</body>
+
+</html>
